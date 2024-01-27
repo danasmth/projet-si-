@@ -1,0 +1,93 @@
+<!-- actions_medecins.html -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Actions sur les RendezVous</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        form {
+            margin: 10px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 200px;
+            font-size: 16px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Actions sur les RendezVous</h1>
+        <div class="button-container">
+            <form method="get" action="{% url 'ajouter_rendezvous' %}">
+                <button type="submit">Ajouter un RendezVous</button>
+            </form>
+
+            <form method="get" action="{% url 'liste_rendezvous' %}">
+                <button type="submit">Modifier un RendezVous</button>
+            </form>
+
+            <form method="get" action="{% url 'liste_suppression_rendezvous' %}">
+                <button type="submit">Supprimer des RendezVous</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
